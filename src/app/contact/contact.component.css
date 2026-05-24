@@ -1,0 +1,98 @@
+/* ── Existing styles ── */
+.contact-wrapper { color: #cacaca; background: #242a35; }
+.txt-bg-contact::before { content: "Contact Me"; }
+.contact-links { color: #fff; font-size: 16px; }
+.line-height-normal { line-height: 90%; }
+@media (min-width: 200px) and (max-width: 768px) {
+  .txt-bg-contact::before { padding-top: 15px; }
+}
+
+/* ── Email Form Card ── */
+.contact-form-card {
+  background: transparent;
+  border: none;
+  padding: 20px 0;
+}
+
+.form-label {
+  color: #aaa;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  display: block;
+  text-align: left;
+}
+
+.contact-input {
+  background: rgba(36, 42, 53, 0.2);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  padding: 14px 18px;
+  width: 100%;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.contact-input:focus {
+  background: rgba(36, 42, 53, 0.4);
+  border-color: #00d4ff;
+  color: #fff;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+  outline: none;
+}
+
+.contact-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+textarea.contact-input {
+  resize: none;
+}
+
+/* ── Send Button ── */
+.btn-send {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px;
+  background: #00d4ff;
+  color: #0d111a;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  margin-top: 8px;
+}
+
+.btn-send:hover:not(:disabled) {
+  opacity: 0.88;
+  transform: scale(1.02);
+}
+
+.btn-send:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ── Status Messages ── */
+.alert-success-msg {
+  color: #4ade80;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.alert-error-msg {
+  color: #f87171;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 12px;
+}

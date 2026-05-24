@@ -1,0 +1,116 @@
+<section class="section contact-wrapper" id="contact">
+  <div id="particles-js2"></div>
+  <div class="container">
+
+    <!-- Section Title -->
+    <div class="row justify-content-center txt-bg txt-bg-contact">
+      <div class="col-lg-6">
+        <div class="section-title text-center mb-4 pb-2 pointer wow fadeIn">
+          <div class="mb-5 pb-3">
+            <i class="fas fa-headset h1"></i>
+          </div>
+          <h2 class="text-white h3">Contact me</h2>
+          <p class="text-white-50 mx-auto mb-0 mt-4 para-desc">
+            Address, Phone Number and Email Address.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Info Cards -->
+    <div class="row justify-content-center">
+      <div
+        *ngFor="let contact of contactData"
+        class="col-lg-3 col-md-4 mt-4 pt-2 pointer wow slideIn{{contact['animationClass']}}"
+        data-wow-delay="0.1s"
+      >
+        <ng-template #title>
+          <strong><em>{{ contact['title'] }}</em></strong>
+        </ng-template>
+        <div class="text-center" placement="bottom" [ngbTooltip]="title">
+          <i class="{{ contact['icon'] }} text-custom h3 mb-4"></i>
+          <h3
+            *ngFor="let links of contact['links']"
+            class="mb-{{ contact['links'].length - 1 }} font-weight-normal line-height-normal"
+          >
+            <a
+              rel="noreferrer"
+              aria-label="contact"
+              target="_blank"
+              class="contact-links"
+              href="{{ links['type'] }}{{ links['title'] }}"
+            >{{ links['title'] }}</a>
+          </h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Email Form ── -->
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-7 col-md-10">
+        <div class="contact-form-card wow fadeInUp" data-wow-delay="0.2s">
+          <h4 class="text-white text-center mb-4 pb-2">Send a Message</h4>
+
+          <div class="row text-left">
+            <div class="col-md-6 mb-4">
+              <label class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control contact-input w-100"
+                placeholder="Your name"
+                [(ngModel)]="formData.name"
+              />
+            </div>
+            <div class="col-md-6 mb-4">
+              <label class="form-label">Subject</label>
+              <input
+                type="text"
+                class="form-control contact-input w-100"
+                placeholder="Subject"
+                [(ngModel)]="formData.subject"
+              />
+            </div>
+          </div>
+
+          <div class="mb-4 text-left">
+            <label class="form-label">Your Email</label>
+            <input
+              type="email"
+              class="form-control contact-input w-100"
+              placeholder="your@email.com"
+              [(ngModel)]="formData.email"
+            />
+          </div>
+
+          <div class="mb-4 text-left">
+            <label class="form-label">Message</label>
+            <textarea
+              class="form-control contact-input w-100"
+              rows="5"
+              placeholder="Tell me about your project or opportunity..."
+              [(ngModel)]="formData.message"
+            ></textarea>
+          </div>
+
+          <!-- Status Messages -->
+          <div *ngIf="status === 'success'" class="alert-success-msg mt-3 mb-3">
+            ✅ Message sent! I'll get back to you soon.
+          </div>
+          <div *ngIf="status === 'error'" class="alert-error-msg mt-3 mb-3">
+            ❌ Something went wrong. Please try again or email directly.
+          </div>
+
+          <button
+            class="btn-send w-100 mt-2"
+            (click)="sendMessage()"
+            [disabled]="status === 'sending'"
+          >
+            <i class="fas fa-paper-plane mr-2"></i>
+            {{ status === 'sending' ? 'Sending…' : 'Send Message' }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
