@@ -1,4 +1,4 @@
-# 👨‍💻 Harinivas Portfolio
+# 👨‍💻 Harinivash Portfolio
 
 A modern, responsive, and interactive personal portfolio website built with **Angular**, showcasing my skills, projects, certifications, achievements, and journey as a **Python Full Stack Developer**.
 
@@ -8,7 +8,7 @@ A modern, responsive, and interactive personal portfolio website built with **An
 
 ## 🌐 Live Demo
 
-**Portfolio:** 
+**Portfolio:** harinivash-portfolio.vercel.app
 
 ---
 
